@@ -1,0 +1,5 @@
+D:\GitHub\SmartCoreAppWin\SmartCoreAppWin\obj\Release\SmartCoreAppWin.csprojAssemblyReference.cache
+D:\GitHub\SmartCoreAppWin\SmartCoreAppWin\obj\Release\MainWindow.g.cs
+D:\GitHub\SmartCoreAppWin\SmartCoreAppWin\obj\Release\App.g.cs
+D:\GitHub\SmartCoreAppWin\SmartCoreAppWin\obj\Release\SmartCoreAppWin_MarkupCompile.cache
+D:\GitHub\SmartCoreAppWin\SmartCoreAppWin\obj\Release\SmartCoreAppWin_MarkupCompile.lref
