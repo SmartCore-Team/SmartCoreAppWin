@@ -354,15 +354,18 @@ namespace SmartCoreAppWin
                             slider.IsMoveToPointEnabled = true;
                             slider.Value = int.Parse(value.ToString());
                             valueLabel.Content = value.ToString();
-                            slider.ValueChanged += async (s, e) =>
+                            if (!readOnly)
                             {
-                                if (null == slider.Tag)
+                                slider.ValueChanged += async (s, e) =>
                                 {
-                                    await PostHttps("{\"type\": \"device\", \"method\": \"setPropertyValue\", \"propertyIdList\": [\"" + property.Name + "\"], \"deviceIdList\": [\"" + deviceId + "\"], \"value\": " + slider.Value + "}");
-                                }
-                                valueLabel.Content = slider.Value;
-                                slider.Tag = null;
-                            };
+                                    if (null == slider.Tag)
+                                    {
+                                        await PostHttps("{\"type\": \"device\", \"method\": \"setPropertyValue\", \"propertyIdList\": [\"" + property.Name + "\"], \"deviceIdList\": [\"" + deviceId + "\"], \"value\": " + slider.Value + "}");
+                                    }
+                                    valueLabel.Content = slider.Value;
+                                    slider.Tag = null;
+                                };
+                            }
                             valueLabel.VerticalAlignment = VerticalAlignment.Center;
                             valueLabel.Width = 50;
 
@@ -378,10 +381,13 @@ namespace SmartCoreAppWin
                             CheckBox checkbox = new CheckBox();
                             checkbox.VerticalAlignment = VerticalAlignment.Center;
                             checkbox.Margin = new System.Windows.Thickness(2, 0, 0, 0);
-                            checkbox.Click += async (s, e) =>
+                            if (!readOnly)
                             {
-                                await PostHttps("{\"type\": \"device\", \"method\": \"setPropertyValue\", \"propertyIdList\": [\"" + property.Name + "\"], \"deviceIdList\": [\"" + deviceId + "\"], \"value\": " + ((bool)checkbox.IsChecked ? "true" : "false") + "}");
-                            };
+                                checkbox.Click += async (s, e) =>
+                                {
+                                    await PostHttps("{\"type\": \"device\", \"method\": \"setPropertyValue\", \"propertyIdList\": [\"" + property.Name + "\"], \"deviceIdList\": [\"" + deviceId + "\"], \"value\": " + ((bool)checkbox.IsChecked ? "true" : "false") + "}");
+                                };
+                            }
 
                             if (JTokenType.Null == value.Type)
                             {
