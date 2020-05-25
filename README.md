@@ -2,9 +2,9 @@
 SmartCore的一个Windows桌面应用UI。
 
 ## 界面预览
-![](https://raw.githubusercontent.com/SmartCore-Team/SmartCoreAppWin/master/images/1.jpg)
-![](https://raw.githubusercontent.com/SmartCore-Team/SmartCoreAppWin/master/images/2.jpg)
-![](https://raw.githubusercontent.com/SmartCore-Team/SmartCoreAppWin/master/images/3.jpg)
+![](https://raw.githubusercontent.com/SmartCore-Team/SmartCoreAppWin/master/images/1.png)
+![](https://raw.githubusercontent.com/SmartCore-Team/SmartCoreAppWin/master/images/2.png)
+![](https://raw.githubusercontent.com/SmartCore-Team/SmartCoreAppWin/master/images/3.png)
 
 ## 配置说明
 ```
